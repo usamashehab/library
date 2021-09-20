@@ -1,0 +1,37 @@
+{% extends "layout/base.html" %}
+
+
+{% load static %}
+
+{% block library %}
+
+<link rel="stylesheet" href="{% static "book/css/home.css" %}">
+<h3>All Categories</h3>
+<div class="cards__container">
+    {% for category in categories  %}
+
+
+    <div class="cat_card">
+        <img class="cat_img" src="{{category.img.url}}" alt="" />
+        <p class="cat_name">{{category.title}}</p>
+        <p class="author">{{category.books.count}}</p>
+        <a href="{% url 'category:detail' category.pk %}"><button class="cat_book_btn">view all</button></a>
+    </div>
+    {% endfor %}
+</div>
+<div class="cards__container">
+    {% for book in books %}
+
+
+    <div class="card">
+        <img class="book_img" src="{{book.img.url}}" alt="" />
+        <p class="name">{{book.title}}</p>
+        <p class=" author">{{book.author}}</p>
+        <p class="status">Borrowed</p>
+        <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock library %}

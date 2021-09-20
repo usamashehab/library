@@ -1,0 +1,17 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block library %}
+<link rel="stylesheet" href="{% static "book/css/home.css" %}">
+
+<div class="cards__container">
+    {% for book in category.books.all %}
+    <div class="card">
+        <img class="book_img" src="{{book.img.url}}" alt="" />
+        <p class="name">{{book.title}}</p>
+        <p class=" author">{{book.author}}</p>
+        <p class="status">Borrowed</p>
+        <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock library %}

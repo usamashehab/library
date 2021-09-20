@@ -1,0 +1,144 @@
+
+.cards__container {
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px auto 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+    box-shadow: 0px 0px 3px 0px grey;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .book_img {
+    width: 50%;
+    height: 60%;
+    margin: 10px 0px 10px 50px;
+    border-radius: 5px;
+  }
+  
+  .cat_img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .card {
+    position: relative;
+    width: 200px;
+    height: 270px;
+    margin: 15px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px grey;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.075);
+  }
+  
+  
+  .cat_card {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    text-align: center;
+    margin: 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .cat_card:hover {
+    transform: scale(1.075);
+  }
+  
+  .name {
+    color: #232f3e;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 0px 0px 0px 10px;
+    width: 90%;
+    margin: 0;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  
+  .cat_name {
+    color: #232f3e;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 0px 0px 0px 10px;
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  .author {
+    color: #232f3e;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin: 0px 10px;
+    overflow: hidden;
+  }
+  /* 
+  .id {
+    font-size: 0.8rem;
+    margin: 0px 10px;
+    overflow: hidden;
+  } */
+  
+  .status {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: tomato;
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+  }
+  
+  .book_btn {
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #131a22;
+    transition: all 0.3s ease;
+  }
+  
+  .book_btn:hover {
+    color: #f09f09;
+  }
+  
+  h3 {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 70px;
+    color: #f09f09;
+    font-weight: 300;
+  }
+  
+  .cat_book_btn {
+    outline: none;
+    border: none;
+    background-color: #ffb830;
+    color: white;
+    font-weight: 300;
+    margin-top:5px ;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

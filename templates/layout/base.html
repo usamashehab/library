@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href=" {% static "book/css/base.css" %}">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <header>
+        <span class="logo">
+            <a href="{% url 'book:book' %}"><i class="fas fa-book-open logoo"></i></a>
+        </span>
+        <form action="{% url 'book:search' %}" method="post">
+            {% csrf_token %}
+            <div class="search_container">
+                <input type="text" class="search" id="search_id" placeholder="Discover new books" name="search"
+                    autocomplete="off" />
+                <button type="submit" class="search_btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+        <a class='category' href="{% url 'category:category' %}" title="log out">Categories</a>
+        {% if user.is_authenticated%}
+        <a class="profile_btn" href="std_profile.html" title="go to profile"><i class="fas fa-user"></i></a>
+        <a class="logout_btn" href="{% url 'logout' %}" title="log out"><i class="fas fa-sign-out-alt"></i></a>
+        {% else %}
+        <a class='login' href="{% url 'login' %}" title="log out">Log In</a>
+        <a class='login' href="{% url 'signup' %}" title="log out">Sign Up</a>
+        {% endif %}
+    </header>
+
+    {% block library %}
+
+    {% endblock library %}
+</body>
+
+</html>

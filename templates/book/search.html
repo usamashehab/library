@@ -1,0 +1,22 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block library %}
+<link rel="stylesheet" href="{% static "book/css/home.css" %}">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+<div class="cards__container">
+    {% for book in books %}
+
+
+    <div class="card">
+        <img class="book_img" src="{{book.img.url}}" alt="" />
+        <p class="name">{{book.title}}</p>
+        <p class=" author">{{book.author}}</p>
+        <p class="status">Borrowed</p>
+        <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
+    </div>
+    {% endfor %}
+    {% endblock library %}

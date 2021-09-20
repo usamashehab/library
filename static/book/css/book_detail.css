@@ -1,0 +1,224 @@
+
+  .container {
+    width: 90%;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0px auto;
+    margin-top: 25px;
+    padding-bottom:20px ;
+    padding-top:20px ;
+    box-shadow: 0px 0px 3px 0px grey;
+    position: relative;
+  }
+
+  .book_img {
+      width: 300px;
+      height: 400px;
+      margin: 0px 15px;
+      border-radius: 10px;
+  }
+
+  .name {
+      font-size: 1.6rem;
+      font-weight: bold;
+      position: absolute;
+      top: 15px;
+      left: 350px;
+  }
+
+  .author {
+  
+    font-size: 1.4rem;
+    font-style: italic;
+    position: absolute;
+    top: 50px;
+    left: 350px;
+  }
+
+  .cat {
+    color: #364F6B;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 100px;
+    left: 350px;
+  }
+
+  .desc {
+      font-size: 1rem;
+      display: inline-block;
+      position: absolute;
+      width: 60%;
+      top: 150px;
+      left: 350px;
+  }
+ 
+
+  .status {
+      position: absolute;
+      color: green;
+      font-weight: bold;
+      top: 350px;
+      left: 350px;
+  }
+  .availability {
+    position: absolute;
+    top: 370px;
+    left: 350px;
+    opacity: 50%;
+  }
+
+  .return_btn , .borrow_btn {
+    background-color: #FFB830;
+    color: white;
+    text-decoration: none;
+    display: inline;
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 85%;
+    opacity: 50%;
+    cursor: default;
+    visibility: visible;
+  }
+
+  .borrow_btn:hover {
+    opacity: 50%;
+  }
+
+  .cards__container {
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px auto 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+    box-shadow: 0px 0px 3px 0px grey;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .book_img2 {
+    width: 50%;
+    height: 60%;
+    margin: 10px 0px 10px 50px;
+    border-radius: 5px;
+  }
+  
+  .card {
+    position: relative;
+    width: 200px;
+    height: 270px;
+    margin: 15px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px grey;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.075);
+  }
+  
+  .name2 {
+    color: #232f3e;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 0px 0px 0px 10px;
+    width: 90%;
+    margin: 0;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  .author2 {
+    color: #232f3e;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin: 0px 10px;
+    overflow: hidden;
+  }
+  
+  .id2 {
+    font-size: 0.8rem;
+    margin: 0px 10px;
+    overflow: hidden;
+  }
+  
+  .status2 {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: tomato;
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+  }
+  
+  .book_btn {
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #131a22;
+    transition: all 0.3s ease;
+  }
+  
+  .book_btn:hover {
+    color: #f09f09;
+  }
+  
+  h3 {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 70px;
+    color: #f09f09;
+    font-weight: 300;
+  }
+  
+
+
+.return_btn {
+    opacity: 100;
+    display: none;
+   
+}
+
+
+.text_box {
+    opacity: 40%;
+    padding:5px 5px 5px 15px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 20%;
+    height: 25px;
+    border: 1.4px solid grey;
+    background-color: #EAEAEA;
+    position: absolute;
+    top: 40px;
+    left: 74%;
+  }
+
+  .text_box:hover {
+    opacity: 80%;
+  }
+
+  .text_box:focus {
+    opacity: 80%;
+  }
+  

@@ -1,0 +1,54 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block library %}
+<link rel="stylesheet" href="{% static "book/css/book_detail.css" %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+<h3>Book details</h3>
+<div class="container">
+    <img src="{{object.img.url}} " alt="" class="book_img">
+    <p class="name">{{object.title}}</p>
+    <p class="author">{{object.author}} </p>
+    <p class="cat">{{object.category}} </p>
+    <p class="desc">{{object.description}} </p>
+    <p class="status">{{book.status}}</p>
+    <p class="availability"> will be available at: {{object.return_date}} </p>
+
+
+
+
+    <form class="myform" action="{% url 'book:book_borrow' book.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="date" onchange="myfun()" class="return_date text_box" id="return_date" title="set return date"
+            name="return_date" autocomplete="off" required />
+
+        <button type='submit' class="borrow_btn" id="borrow_btn">Set return date</button>
+    </form>
+    <!-- <a href="{% url 'book:book_return'  book.pk %}">back to shelf</a> -->
+    <form class="form" action="{% url 'book:book_return' book.pk %}" method="POST">
+        {% csrf_token %}
+
+
+        <button class="return_btn" id="return_btn">return</button>
+    </form>
+</div>
+<h3>Related Books</h3>
+<div class="cards__container">
+    {% for book in book.category.books.all|slice:'4' %}
+
+    <div class="card">
+        <img class="book_img2" src="{{book.img.url}}" alt="" />
+        <p class="name2">{{book.title}}</p>
+        <p class=" author2">{{book.author}}</p>
+        <p class="status2">{{book.status}}</p>
+        <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
+    </div>
+    {% endfor %}
+</div>
+<script src="{% static "book/js/book_details.js" %}"></script>
+
+
+{% endblock library %}
