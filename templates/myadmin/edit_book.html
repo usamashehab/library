@@ -1,0 +1,19 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block library %}
+<link rel="stylesheet" href="{% static "myadmin/css/add_book.css" %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+<h3>Add Book</h3>
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <button type="submit">Edit </button>
+    </form>
+</div>
+{% endblock library %}

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'student',  # new
     'book',  # new
     'category',  # new
+    'myadmin',  # new
+    'crispy_forms',  # new
 ]
 
 MIDDLEWARE = [
@@ -53,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+AUTH_USER_MODEL = 'student.CustomUser'
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
@@ -74,7 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -137,3 +139,4 @@ MEDIA_URL = '/media/'  # new
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'book:book'
 LOGOUT_REDIRECT_URL = 'book:book'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -1,0 +1,43 @@
+.container {
+    width: 40%;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0px auto;
+    margin-top: 25px;
+    padding-bottom:20px ;
+    padding-top:20px ;
+    box-shadow: 0px 0px 3px 0px grey;
+    position: relative;
+  }
+  .delete_btn  {
+    background-color: #FFB830;
+    color: white;
+    text-decoration: none;
+    display: inline;
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 75%;
+   
+    cursor: default;
+    visibility: visible;
+  }
+  span {
+      color: tomato;
+      font-weight: bold;
+  }
+  h3 ,p {
+      margin :auto; 
+      margin-left: 15px;
+  }
+  p{
+      margin-top: 10px;
+  }
+  

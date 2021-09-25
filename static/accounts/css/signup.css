@@ -1,0 +1,104 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#EAEAEA ;
+}
+
+
+.container {
+    width: 60%;
+    height: 80vh;
+    margin: 60px auto;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 3px 0px grey;
+    position: relative;
+}
+
+.img_container {
+    width: 40%;
+    height: 100%;
+    opacity: 80%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 3px 0px grey;
+    background-color: #FFB830;
+    position: absolute;
+    right: 0;
+}
+
+.img {
+    width: 100%;
+    height: 80%;
+    margin-top: 60px;
+}
+
+h2 {
+    color: #FFB830;
+    padding: 40px 0px 0px 0px;
+    text-align: center;
+}
+
+h4 {
+    font-weight: 400;
+    text-align: center;
+}
+
+.signin {
+    text-decoration: underline;
+    color: #3DB2FF;
+}
+
+.form_container {
+    width: 60%;
+}
+
+form{
+    
+    text-align: center;
+}
+
+.text_box {
+    opacity: 40%;
+    margin: 10px;
+    padding:5px 5px 5px 15px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 80%;
+    height: 25px;
+    border: 1.4px solid grey;
+    background-color: #EAEAEA;
+  }
+  #password1 , #password2 {
+      width: 36%;
+  }
+
+  .text_box:hover {
+    opacity: 80%;
+  }
+
+  .text_box:focus {
+    opacity: 80%;
+  }
+
+
+  .signup_btn {
+   
+    background-color: #FFB830;
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .signup_btn:hover {
+     opacity: 50%;
+  }

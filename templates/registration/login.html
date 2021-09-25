@@ -1,8 +1,24 @@
 {% extends "layout/base.html" %}
+{% load static %}
 {% block library %}
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Log In</button>
-</form>
+<link rel="stylesheet" href=" {% static "accounts/css/signin.css" %}">
+<div class="container">
+    <div class="img_container">
+        <img src="{% static "accounts/images/books.png" %}" alt="" class="img" />
+    </div>
+    <div class="form_container">
+        <h2>Sign In</h2>
+        <h4>Want to register? <a href="{% url 'signup'%}"><span class="signup">sign up</span></a></h4>
+
+        <form method="post">
+
+
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="signin_btn">Sign In</i></button>
+            <h4> Forgot your password?<a href="{% url 'password_reset'%}"><span class="signup"> Reset it</span></a>
+            </h4>
+        </form>
+    </div>
+</div>
 {% endblock library %}

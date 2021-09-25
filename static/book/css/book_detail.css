@@ -56,7 +56,7 @@
 
   .status {
       position: absolute;
-      color: green;
+      color: tomato;
       font-weight: bold;
       top: 350px;
       left: 350px;
@@ -68,7 +68,7 @@
     opacity: 50%;
   }
 
-  .return_btn , .borrow_btn {
+  .return_btn , .borrow_btn, .delete_btn , .edit_btn {
     background-color: #FFB830;
     color: white;
     text-decoration: none;
@@ -87,7 +87,14 @@
     cursor: default;
     visibility: visible;
   }
-
+  .delete_btn , .edit_btn{
+    opacity:100%;
+  }
+  .edit_btn{
+    left :90%;
+    padding: 10px 15px;
+    text-align: center
+  }
   .borrow_btn:hover {
     opacity: 50%;
   }
@@ -190,12 +197,12 @@
   }
   
 
+.return_btn{
+  opacity: 100;
+  display: none;
 
-.return_btn {
-    opacity: 100;
-    display: none;
-   
 }
+
 
 
 .text_box {

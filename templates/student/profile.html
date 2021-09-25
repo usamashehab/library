@@ -1,0 +1,44 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block library %}
+<link rel="stylesheet" href="{% static "student/css/profile.css" %}">
+<h3>Student Info</h3>
+<div class="container">
+    <div class="info_container">
+        <div class="profileimg_container">
+            <img src={% if user.img.url %} "{{student.img.url}}" {%else%} "{% static "accounts/images/profile.jpg" %}"
+                {% endif %} " alt="" class=" profile_img" />
+        </div>
+        <p class="std_name item_info">{{student.first_name}} {{studnet.last_name}} ({{student.username}})</p>
+        <p class="std_email item_info">{{student.email}}</p>
+        <p class="std_id item_info">ID: {{student.id}}</p>
+        <p class="books_num item_info"> <b> borrow </b>{{student.books.all.count}} books</p>
+
+
+
+
+    </div>
+</div>
+<h3>Books</h3>
+<div class="cards__container">
+    {% if user.books.all.count < 1 %}
+    <h2>does not borrow any books</h2>
+    {%else%}
+
+    {% for book in books  %}
+
+    <div class="card">
+        <img class="book_img" src="{{book.img.url}}" alt="" />
+        <p class="name">{{book.title}}</p>
+        <p class="author">{{book.author}}</p>
+        {% if user.is_staff %}
+        <p class="id">ID: {{book.id}}</p>
+        {% endif %}
+        <a href="book:book_detail' book.pk"><button class="book_btn">view details</button></a>
+    </div>
+    {% endfor %}
+
+
+    {% endif %}
+</div>
+{% endblock library %}

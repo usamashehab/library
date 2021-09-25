@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
 # , CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.views import View
 from .models import Book
 from category.models import Category
+from student.models import CustomUser
+
 # Create your views here.
 
 
@@ -14,10 +15,14 @@ class BookListView(ListView):
     template_name = "book/home.html"
     context_object_name = 'books'
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self,  **kwargs):
+        # student = self.request.user
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()[
-            :5]
+            :4]
+        context['students'] = CustomUser.objects.all()[:4]
+        # context['student1'] = student
+        # print(student.books)
         return context
 
 
@@ -30,9 +35,13 @@ class BorrowBtn(View):
     template_name = 'book/home.html'
 
     def post(self, request,  * args, **kwargs):
+
         book = get_object_or_404(Book, pk=kwargs['pk'])
         book.return_date = request.POST["return_date"]
         book.status = 'Borrowed'
+        # std_pk = int(request.user.id)get_object_or_404(CustomUser, pk=std_pk)
+        custom_user = request.user
+        book.student = custom_user
         book.save()
         return redirect('book:book_detail', kwargs['pk'])
 
@@ -47,6 +56,7 @@ class ReturnBtn(View):
         book = get_object_or_404(Book, pk=kwargs['pk'])
         book.return_date = None
         book.status = 'Available'
+        book.student = None
         book.save()
         return redirect('book:book_detail', kwargs['pk'])
 
@@ -61,10 +71,14 @@ class Search(View):
         searchname = request.POST["search"]
         if searchname == '':
             return redirect('book:book')
-        books = Book.objects.filter(title__startswith=searchname)
-        books = books | Book.objects.filter(author__startswith=searchname)
+        if type(searchname) == type('ss') and not searchname.isnumeric():
+            books = Book.objects.filter(title__startswith=searchname)
+            books = books | Book.objects.filter(author__startswith=searchname)
+            return render(request, 'book/search.html', {'books': books})
 
-        return render(request, 'book/search.html', {'books': books})
+        if request.user.is_staff:
+            student = CustomUser.objects.filter(id=int(searchname))
+            return render(request, 'book/search.html', {'students': student})
 
     def get(self, request, *args, **kwargs):
 

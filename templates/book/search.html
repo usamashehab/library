@@ -8,6 +8,18 @@
 
 
 <div class="cards__container">
+    {% if user.is_staff %}
+    {% for student in students %}
+    <div class="card">
+        <img class="book_img" src="{{student.img.url}}" alt="" />
+        <p class="name">{{student.first_name}}{{student.last_name}}</p>
+        <p class="author">ID {{student.id}}</p>
+        <a href="{% url "std_profile" student.pk%}" class="book_btn">view more info</a>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+
     {% for book in books %}
 
 
@@ -15,7 +27,7 @@
         <img class="book_img" src="{{book.img.url}}" alt="" />
         <p class="name">{{book.title}}</p>
         <p class=" author">{{book.author}}</p>
-        <p class="status">Borrowed</p>
+        <p class="status">{{book.status}}</p>
         <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
     </div>
     {% endfor %}

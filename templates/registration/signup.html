@@ -1,9 +1,19 @@
 {% extends "layout/base.html" %}
+{% load static %}
 {% block library %}
-<h2>Sign Up</h2>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Sign Up</button>
-</form>
+<link rel="stylesheet" href="{% static "accounts/css/signup.css" %}">
+<div class="container">
+    <div class="img_container">
+        <img src="{% static "accounts/images/b.png" %}" alt="" class="img" />
+    </div>
+    <div class="form_container">
+        <h2>Create Account</h2>
+        <form class="signup_form" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <button class='signup_btn' type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
 {% endblock library %}

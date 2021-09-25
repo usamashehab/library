@@ -1,0 +1,22 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block library %}
+<link rel="stylesheet" href="{% static "myadmin/css/delete.css" %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+
+
+<div class="container">
+    <h3>Delete </h3>
+    <form action="" method='post'>
+        {% csrf_token %}
+        <p>Are you sure you want to delete <span> "{{ book.title }}"</span>?</p>
+        {{form.as_p}}
+        <button type="submit" class="delete_btn">Delete </button>
+    </form>
+
+</div>
+{% endblock library %}

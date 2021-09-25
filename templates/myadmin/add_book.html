@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+{% load static %}
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+{% block library %}
+<link rel="stylesheet" href="{% static "myadmin/css/book_add.css" %}">
+
+
+<div class="container">
+    <h2>Add Book</h2>
+
+    <form method="post">
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+
+            <button class="signin_btn" type="submit">Add </button>
+
+
+</div>
+{% endblock library %}
