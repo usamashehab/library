@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-# , CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views import View
 from .models import Book
@@ -31,7 +31,7 @@ class BookDetailView(DetailView):
     template_name = "book/book_detail.html"
 
 
-class BorrowBtn(View):
+class BorrowBtn(LoginRequiredMixin, View):
     template_name = 'book/home.html'
 
     def post(self, request,  * args, **kwargs):
@@ -50,7 +50,7 @@ class BorrowBtn(View):
         return redirect('book:book')
 
 
-class ReturnBtn(View):
+class ReturnBtn(LoginRequiredMixin, View):
 
     def post(self, request,  * args, **kwargs):
         book = get_object_or_404(Book, pk=kwargs['pk'])

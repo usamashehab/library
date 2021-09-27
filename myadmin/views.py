@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from book.models import Book
 from django import forms
@@ -9,13 +9,13 @@ from category.models import Category
 # Create your views here.
 
 
-class BookCreateView(CreateView):
+class BookCreateView(LoginRequiredMixin, CreateView):
     model = Book
     template_name = "myadmin/add_book.html"
     fields = ['title', 'author', 'description', 'category', 'img']
 
 
-class BookUpdateView(UpdateView):
+class BookUpdateView(LoginRequiredMixin, UpdateView):
     model = Book
     template_name = "myadmin/edit_book.html"
     fields = ['title', 'author', 'description', 'category', 'img']
@@ -27,7 +27,7 @@ class BookUpdateView(UpdateView):
     }
 
 
-class BookDeleteView(DeleteView):
+class BookDeleteView(LoginRequiredMixin, DeleteView):
     model = Book
     template_name = "myadmin/delete_book.html"
     success_url = reverse_lazy('book:book')

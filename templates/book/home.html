@@ -27,7 +27,7 @@
 </div>
 
 {% endif %}
-{% if user.is_authenticated %}
+{% if user.is_authenticated and not user.is_staff %}
 <h3>My Book</h3>
 <div class="cards__container">
     {% if user.books.all.count < 1 %}
