@@ -16,7 +16,7 @@ class Book(models.Model):
     student = models.ForeignKey(
         get_user_model(), on_delete=models.SET_NULL, related_name="books", null=True, blank=True)
     description = models.TextField()
-    img = models.ImageField(upload_to='book/images/')
+    img = models.ImageField(upload_to='book/images/', )
     status = models.CharField(
         max_length=10,
         choices=[

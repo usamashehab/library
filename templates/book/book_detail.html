@@ -14,13 +14,19 @@
     <p class="cat">{{object.category}} </p>
     <p class="desc">{{object.description}} </p>
     <p class="status">{{book.status}}</p>
-    <p class="availability"> will be available at: {{object.return_date}} </p>
+
+    {% if book.student and user.is_staff%}
+    <p class="id">Student: <a id='std_name' href="{{book.student.get_absolute_url}}">{{book.student.first_name}}
+            {{book.student.last_name}} </a></p>
+
+    {% endif %}
+    <p class=" availability"> will be available at: {{object.return_date}} </p>
 
 
     {% if user.is_staff %}
 
 
-    <a class='delete_btn' href="{% url 'myadmin:delete_book' book.pk %}"><i class="fas fa-trash"></i></a>
+    <a class='delete_btn' href=" {% url 'myadmin:delete_book' book.pk %}"><i class="fas fa-trash"></i></a>
     <a class='edit_btn' href="{% url 'myadmin:edit_book' book.pk %}"><i class="fas fa-edit"></i></a>
 
     {%else%}
@@ -33,12 +39,23 @@
         <button type='submit' class="borrow_btn" id="borrow_btn">Set return date</button>
     </form>
     <!-- <a href="{% url 'book:book_return'  book.pk %}">back to shelf</a> -->
+    {% if book.student == user %}
+
+
     <form class="form" id="return_form" action="{% url 'book:book_return' book.pk %}" method="POST">
         {% csrf_token %}
 
 
         <button class="return_btn" id="return_btn">return</button>
     </form>
+    {%else%}
+    <form class="form" id="return_form" action="{% url 'book:book' %}" method="get">
+        {% csrf_token %}
+
+
+        <button class="return_btn" id="return_btn">back to shelf</button>
+    </form>
+    {% endif %}
     {% endif %}
 
 
@@ -52,6 +69,7 @@
         <p class="name2">{{book.title}}</p>
         <p class=" author2">{{book.author}}</p>
         <p class="status2">{{book.status}}</p>
+
         <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
     </div>
     {% endfor %}

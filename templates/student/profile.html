@@ -25,7 +25,7 @@
     <h2>does not borrow any books</h2>
     {%else%}
 
-    {% for book in books  %}
+    {% for book in student.books.all  %}
 
     <div class="card">
         <img class="book_img" src="{{book.img.url}}" alt="" />

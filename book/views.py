@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
 from django.views import View
 from .models import Book
@@ -10,6 +10,12 @@ from student.models import CustomUser
 
 
 class BookListView(ListView):
+    model = Book
+    template_name = "book/book_list.html"
+    context_object_name = 'books'
+
+
+class HomeListView(ListView):
 
     model = Book
     template_name = "book/home.html"
@@ -19,8 +25,8 @@ class BookListView(ListView):
         # student = self.request.user
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()[
-            :4]
-        context['students'] = CustomUser.objects.all()[:4]
+            :5]
+        context['students'] = CustomUser.objects.all()[:5]
         # context['student1'] = student
         # print(student.books)
         return context
@@ -50,9 +56,10 @@ class BorrowBtn(LoginRequiredMixin, View):
         return redirect('book:book')
 
 
-class ReturnBtn(LoginRequiredMixin, View):
+class ReturnBtn(LoginRequiredMixin, UserPassesTestMixin, View):
 
     def post(self, request,  * args, **kwargs):
+
         book = get_object_or_404(Book, pk=kwargs['pk'])
         book.return_date = None
         book.status = 'Available'

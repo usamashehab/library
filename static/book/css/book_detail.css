@@ -52,18 +52,26 @@
       top: 150px;
       left: 350px;
   }
- 
 
+  
   .status {
       position: absolute;
       color: tomato;
       font-weight: bold;
-      top: 350px;
+      top: 335px;
       left: 350px;
   }
+  .id {
+    font-weight:400 ;
+    opacity: 80%;
+    position: absolute;
+    top: 355px;
+    left: 350px;
+  }
+
   .availability {
     position: absolute;
-    top: 370px;
+    top: 380px;
     left: 350px;
     opacity: 50%;
   }
@@ -133,10 +141,10 @@
     cursor: pointer;
   }
   
-  .card:hover {
+  .card:hover { 
     transform: scale(1.075);
   }
-  
+ 
   .name2 {
     color: #232f3e;
     font-weight: bold;
@@ -147,7 +155,12 @@
     height: 20px;
     overflow: hidden;
   }
-  
+  #std_name{
+    text-decoration: none;
+    font-weight: 700;
+    opacity: 100%;
+    color:#3DB2FF  ;
+  }
   .author2 {
     color: #232f3e;
     font-style: italic;

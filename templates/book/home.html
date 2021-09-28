@@ -9,10 +9,11 @@
 
 
 {% if user.is_staff %}
+<h3>Students</h3>
 <div class="cards__container">
 
     {% for student in students %}
-    <div class="std_card">
+    <div class="std_card card">
         <img class="std_img" src="{{student.img.url}}" alt="" />
         <p class="name">{{student.first_name}}{{student.last_name}}</p>
         <p class="author">ID {{student.id}}</p>
@@ -28,7 +29,7 @@
 
 {% endif %}
 {% if user.is_authenticated and not user.is_staff %}
-<h3>My Book</h3>
+<h3>My Books</h3>
 <div class="cards__container">
     {% if user.books.all.count < 1 %}
 
@@ -52,7 +53,24 @@
 </div>
 
 {% endif %}
-<h3>All Categories</h3>
+<h3>Books</h3>
+
+<div class="cards__container">
+    {% for book in books|slice:"0:5"  %}
+
+
+    <div class="card">
+        <img class="book_img" src="{{book.img.url}}" alt="" />
+        <p class="name">{{book.title}}</p>
+        <p class=" author">{{book.author}}</p>
+        <p class="status">{{book.status}}</p>
+        <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
+    </div>
+    {% endfor %}
+    <a class='category book_btn' href="{% url 'book:list_book' %}" title="log out">All Books</a>
+
+</div>
+<h3>Categories</h3>
 <div class="cards__container">
     {% for category in categories  %}
 
@@ -67,19 +85,7 @@
     <a class='category book_btn' href="{% url 'category:category' %}" title="log out">All Categories</a>
 
 </div>
-<div class="cards__container">
-    {% for book in books %}
 
-
-    <div class="card">
-        <img class="book_img" src="{{book.img.url}}" alt="" />
-        <p class="name">{{book.title}}</p>
-        <p class=" author">{{book.author}}</p>
-        <p class="status">{{book.status}}</p>
-        <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
-    </div>
-    {% endfor %}
-</div>
 <script src="{% static "book/js/book_status.js" %}"></script>
 
 

@@ -7,7 +7,7 @@ body {
 
 .container {
     width: 60%;
-    height: 80vh;
+    height: 70vh;
     margin: 60px auto;
     border-radius: 10px;
     background-color: white;
@@ -85,6 +85,7 @@ h4 {
     background-color: #FFB830;
     border-radius: 10px;
     padding: 10px 20px;
+    margin-top: 20px;
     outline: none;
     border: none;
     cursor: pointer;
@@ -97,18 +98,18 @@ h4 {
      opacity: 50%;
   }
 
+  .chbox {
+    height: 15px;
+    width: 40px;
+    margin-right: 0;
+  }
 
-#username{
-    opacity: 40%;
-    margin: 10px;
-    padding:5px 5px 5px 15px;
-    border-radius: 10px;
-    outline: none;
-    font-size: 0.8rem;
-    font-weight: 500;
-    width: 80%;
-    height: 25px;
-    border: 1.4px solid grey;
-    background-color: #EAEAEA;
-}
+  label {
+      font-weight: 300;
+  }
 
+  .radio_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
