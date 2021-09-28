@@ -34,6 +34,7 @@
         {% if user.is_authenticated%}
         {% if user.is_staff %}
 
+
         <a class='category' href="{% url 'myadmin:add_book' %}" title="log out">Add Book</a>
         {%else%}
         <a class='category' href="{% url 'category:category' %}" title="log out"></a>

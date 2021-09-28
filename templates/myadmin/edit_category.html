@@ -8,13 +8,12 @@
 
 
 <div class="container">
-    <h2>Edit Book</h2>
 
     <div class="img_container">
         <img src="{% static "accounts/images/b.png" %}" alt="" class="img" />
     </div>
     <div class="form_container">
-        <h2>Edit Book</h2>
+        <h2>Edit Category</h2>
         <form class="signup_form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}

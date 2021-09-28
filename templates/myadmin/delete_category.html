@@ -13,7 +13,7 @@
     <h3>Delete </h3>
     <form action="" method='post'>
         {% csrf_token %}
-        <p>Are you sure you want to delete <span> {{ object.title }} Book </span>?</p>
+        <p>Are you sure you want to delete <span> {{ object.title }} Category </span>?</p>
         {{form.as_p}}
         <button type="submit" class="delete_btn">Delete </button>
     </form>

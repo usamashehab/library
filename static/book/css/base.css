@@ -105,11 +105,11 @@ body {
   .logout_btn:hover {
     opacity: 70%;
   }
-  .category , .login{
+  .category , .login {
     color:#ffb830 ;
     text-decoration: none;
     /* padding: 12px; */
-    margin-left: 190px;
+    margin-left: 170px;
     text-align: center;
     font-weight: bolder;
   }

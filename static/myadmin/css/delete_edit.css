@@ -1,0 +1,30 @@
+.delete_btn , .edit_btn {
+    background-color: #FFB830;
+    color: white;
+    text-decoration: none;
+    display: inline;
+    position: absolute;
+
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 70px;
+    left: 85%;
+    
+    cursor: default;
+    visibility: visible;
+  }
+  .delete_btn {
+    left: 90%;
+  }
+  /* .cards__container{
+    margin-top: 3%;
+  } */
+  hr{
+    margin-top: 3.8%;
+  }

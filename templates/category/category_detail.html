@@ -2,8 +2,21 @@
 {% load static %}
 {% block library %}
 <link rel="stylesheet" href="{% static "book/css/home.css" %}">
+<link rel="stylesheet" href="{% static "myadmin/css/delete_edit.css" %}">
 
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+{% if user.is_staff %}
+
+
+<a class='delete_btn' href=" {% url 'myadmin:delete_category' category.pk %}"><i class="fas fa-trash"></i></a>
+<a class='edit_btn' href="{% url 'myadmin:edit_category' category.pk %}"><i class="fas fa-edit"></i></a>
+<hr>
+{%endif%}
+<h3>{{category.title}} Books</h3>
 <div class="cards__container">
+
+
     {% for book in category.books.all %}
     <div class="card">
         <img class="book_img" src="{{book.img.url}}" alt="" />
