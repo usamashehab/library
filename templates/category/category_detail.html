@@ -11,7 +11,7 @@
 
 <a class='delete_btn' href=" {% url 'myadmin:delete_category' category.pk %}"><i class="fas fa-trash"></i></a>
 <a class='edit_btn' href="{% url 'myadmin:edit_category' category.pk %}"><i class="fas fa-edit"></i></a>
-<hr>
+
 {%endif%}
 <h3>{{category.title}} Books</h3>
 <div class="cards__container">
