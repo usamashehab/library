@@ -21,7 +21,7 @@
 </div>
 <h3>Books</h3>
 <div class="cards__container">
-    {% if user.books.all.count < 1 %}
+    {% if student.books.all.count < 1 %}
     <h2>does not borrow any books</h2>
     {%else%}
 
@@ -41,4 +41,5 @@
 
     {% endif %}
 </div>
+
 {% endblock library %}

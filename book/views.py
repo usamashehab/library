@@ -78,14 +78,13 @@ class Search(View):
         searchname = request.POST["search"]
         if searchname == '':
             return redirect('book:book')
-        if type(searchname) == type('ss') and not searchname.isnumeric():
-            books = Book.objects.filter(title__startswith=searchname)
-            books = books | Book.objects.filter(author__startswith=searchname)
-            return render(request, 'book/search.html', {'books': books})
+        books = Book.objects.filter(title__startswith=searchname)
+        books = books | Book.objects.filter(author__startswith=searchname)
 
         if request.user.is_staff:
-            student = CustomUser.objects.filter(id=int(searchname))
-            return render(request, 'book/search.html', {'students': student})
+            students = CustomUser.objects.filter(
+                first_name__startswith=searchname)
+            return render(request, 'book/search.html', {'students': students, 'books': books})
 
     def get(self, request, *args, **kwargs):
 

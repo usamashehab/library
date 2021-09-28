@@ -31,4 +31,6 @@
         <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
     </div>
     {% endfor %}
+    <script src="{% static "book/js/book_status.js" %}"></script>
+
     {% endblock library %}
