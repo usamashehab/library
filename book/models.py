@@ -31,4 +31,4 @@ class Book(models.Model):
         return self.title
 
     def get_absolute_url(self):  # new
-        return reverse('book:book_detail', args=[str(self.id)])
+        return reverse('book:book_detail', args=[str(self.pk)])

@@ -37,6 +37,8 @@ h2 {
     color: #FFB830;
     padding: 100px 0px 0px 0px;
     text-align: center;
+    position: relative;
+
 }
 
 .signup {
@@ -104,12 +106,5 @@ h4 {
     margin-right: 0;
   }
 
-  label {
-      font-weight: 300;
-  }
 
-  .radio_container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
+  

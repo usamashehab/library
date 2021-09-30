@@ -6,9 +6,12 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+<h3>search results</h3>
+<hr>
+{% if user.is_staff %}
+<h3>Students</h3>
 
 <div class="cards__container">
-    {% if user.is_staff %}
     {% for student in students %}
     <div class="card">
         <img class="book_img" src="{{student.img.url}}" alt="" />
@@ -19,6 +22,10 @@
     {% endfor %}
 
     {% endif %}
+</div>
+<h3>Book</h3>
+
+<div class="cards__container">
 
     {% for book in books %}
 
@@ -31,6 +38,7 @@
         <a href="{%url 'book:book_detail' book.pk %}"><button class="book_btn">view details</button></a>
     </div>
     {% endfor %}
-    <script src="{% static "book/js/book_status.js" %}"></script>
+</div>
+<script src="{% static "book/js/book_status.js" %}"></script>
 
-    {% endblock library %}
+{% endblock library %}

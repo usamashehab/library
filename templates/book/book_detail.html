@@ -20,7 +20,10 @@
             {{book.student.last_name}} </a></p>
 
     {% endif %}
+    {% if book.status == 'Borrowed' %}
+
     <p class=" availability"> will be available at: {{object.return_date}} </p>
+    {% endif %}
 
 
     {% if user.is_staff %}

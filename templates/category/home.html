@@ -4,8 +4,10 @@
 
 <link rel="stylesheet" href="{% static "book/css/home.css" %}">
 <link rel="stylesheet" href="{% static "myadmin/css/delete_edit.css" %}">
-
+{% if user.is_staff %}
 <a class='edit_btn' href=" {% url 'myadmin:add_category' %}">Add Category</a>
+
+{% endif %}
 
 <h3>All Categories</h3>
 <div class="cards__container">

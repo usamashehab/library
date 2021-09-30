@@ -7,7 +7,7 @@ body {
 
 .container {
     width: 60%;
-    height: 80vh;
+    height: 70vh;
     margin: 60px auto;
     border-radius: 10px;
     background-color: white;
@@ -101,14 +101,4 @@ h4 {
     height: 15px;
     width: 40px;
     margin-right: 0;
-  }
-
-  label {
-      font-weight: 300;
-  }
-
-  .radio_container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
   }

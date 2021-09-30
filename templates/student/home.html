@@ -17,7 +17,7 @@
         <img class="std_img" src="{{student.img.url}}" alt="" />
         <p class="name">{{student.first_name}}{{student.last_name}}</p>
         <p class="author">ID {{student.id}}</p>
-        <p class="status">borrow {{student.books.all.count}} books</p>
+        <p class="status" style="color:green">borrow {{student.books.all.count}} books</p>
         <br>
 
         <a href="{% url "std_profile" student.pk%}" class="book_btn">view more info</a>

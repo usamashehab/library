@@ -31,10 +31,10 @@
         <img class="book_img" src="{{book.img.url}}" alt="" />
         <p class="name">{{book.title}}</p>
         <p class="author">{{book.author}}</p>
-        {% if user.is_staff %}
+
         <p class="id">ID: {{book.id}}</p>
-        {% endif %}
-        <a href="book:book_detail' book.pk"><button class="book_btn">view details</button></a>
+
+        <a href="{{book.get_absolute_url}}"><button class="book_btn">view details</button></a>
     </div>
     {% endfor %}
 

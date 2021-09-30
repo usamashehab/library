@@ -56,7 +56,7 @@ class BorrowBtn(LoginRequiredMixin, View):
         return redirect('book:book')
 
 
-class ReturnBtn(LoginRequiredMixin, UserPassesTestMixin, View):
+class ReturnBtn(LoginRequiredMixin, View):
 
     def post(self, request,  * args, **kwargs):
 
@@ -80,11 +80,11 @@ class Search(View):
             return redirect('book:book')
         books = Book.objects.filter(title__startswith=searchname)
         books = books | Book.objects.filter(author__startswith=searchname)
-
+        students = []
         if request.user.is_staff:
             students = CustomUser.objects.filter(
                 first_name__startswith=searchname)
-            return render(request, 'book/search.html', {'students': students, 'books': books})
+        return render(request, 'book/search.html', {'students': students, 'books': books})
 
     def get(self, request, *args, **kwargs):
 
