@@ -9,7 +9,10 @@ class CreateBookForm(forms.ModelForm):
         model = Book
         fields = ['title', 'author', 'description',  'img',
                   'category']
-        categories = Category.objects.all()
+        try:
+            categories = Category.objects.all()
+        except:
+            categories = list()
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'email text_box ',
