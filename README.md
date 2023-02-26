@@ -25,14 +25,16 @@ markdown
 Copy code
 
 3. Install the required dependencies:
-
-'pip install -r requirements.txt'
-
+```bash
+$ pip install -r requirements.txt
+'''
 
 
 4. Create the database tables:
+```bash
+$ python manage.py migrate
 
-python manage.py migrate
+'''
 
 markdown
 Copy code
