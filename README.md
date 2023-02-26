@@ -26,10 +26,9 @@ Copy code
 
 3. Install the required dependencies:
 
-pip install -r requirements.txt
+'pip install -r requirements.txt'
 
-markdown
-Copy code
+
 
 4. Create the database tables:
 
