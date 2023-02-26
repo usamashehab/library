@@ -50,8 +50,8 @@ Once the application is running, users can perform the following actions:
 - Sign up or log in
 - Search for books by title, author, or category
 - Borrow and return books
-- Add new books (if an admin)
-- Add new categories (if an admin)
+- Add, update and delete books (if an admin)
+- Add, update and delete categories (if an admin)
 
 
 ## Acknowledgements
