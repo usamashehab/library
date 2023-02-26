@@ -13,13 +13,13 @@ To install and run this project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/usamashehab/library.git
+$ git clone https://github.com/usamashehab/library.git
 ```
 
 
 2. Change into the project directory:
 ```bash
-cd library
+$ cd library
 ```
 
 
@@ -37,8 +37,8 @@ $ python manage.py migrate
 
 
 5. Start the development server:
-```python
-python manage.py runserver
+```bash
+$ python manage.py runserver
 ```
 
 6. Open a web browser and navigate to `http://localhost:8000` to access the application.
