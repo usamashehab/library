@@ -1,6 +1,6 @@
 # Library System Project
 
-This is a library system project built with Django 3.2 that allows users to manage the borrowing and returning of books, search for books, add categories, and add new books (if an admin). Users can also sign up and log in to the system.
+This is a library system project built with Django 4.1 that allows users to manage the borrowing and returning of books, search for books, add categories, and add new books (if an admin). Users can also sign up and log in to the system.
 
 ## Demo
 
