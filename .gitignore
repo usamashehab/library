@@ -92,7 +92,7 @@ coverage.xml
 # Jupyter Notebook 
 .ipynb_checkpoints 
 
-# pyenv 
+# py 
 .python-version 
 
 # celery 
